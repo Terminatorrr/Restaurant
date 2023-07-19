@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr class="row100 head">
+            <th colspan="2" class="cell100 column1">Фото</th>
+            <th colspan="0.4" class="cell100 column2">Назва</th>
+            <th colspan="0.3" class="cell100 column3">Ціна</th>
+            <th colspan="0.3" class="cell100 column4">дисконт</th>
+            <th colspan="2" class="cell100 column5">Опис</th>
+            <th colspan="0.5" class="cell100 column6">Категорія</th>
+            <th colspan="0.5" class="cell100 column7">Змінити</th>
+            <th colspan="0.5" class="cell100 column8">Видалити</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for items in dishs%}
+            <tr class="row100 body">
+                <td colspan="2" class="cell100 column1"><img class="img-height" src="/static{{ items.image.url }}"></img> </td>
+                <td colspan="0.4" class="cell100 column2">{{ items.name }}</td>
+                <td colspan="0.3" class="cell100 column3">{{ items.price }} </td>
+                <td colspan="0.3" class="cell100 column4">{{ items.discount }}</td>
+                <td colspan="2" class="cell100 column5">{{ items.category }}</td>
+                <td colspan="0.5" class="cell100 column6">{{ items.description }} </td>
+                <td colspan="0.5" class="cell100 column7" ><a href="{% url 'change' items.id %}">Змінити</a></td>
+                <td colspan="0.5" class="cell100 column8"><a href="{% url 'delete_dish' items.id %}">Видалити</a></td>
+            </tr>
+
+
+
+        {% endfor %}
+    </tbody>
+</table>

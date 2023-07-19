@@ -1,0 +1,124 @@
+<div id="reserve-modal" class="modal modal-reserve"  tabindex="-1" role="dialog" aria-labelledby="reserveModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 id="reserveModalLabel" class="modal-title text-center">
+                    <span class="script">Reservations</span>
+                    <span class="title-text">Book a Table</span>
+                    <span class="title-border"></span>
+                </h2>
+
+            </div><!--//modal-header-->
+            <div class="modal-body">
+                <div class="intro text-center">
+                    <p class="blurb">Call us now to book a table</p>
+                    <p class="phone subtitle">+38(095)-41-09-126</p>
+                    <hr>
+                    <p class="booking-intro">Or book online</p>
+                </div>
+                <form id="reserve-form" class="reserve-form form" method="post" action="" data-save-url="{% url 'Reservation:save_data' %}">
+                    {% csrf_token %}
+                    <div id="form-messages"></div>
+                    <div class="row text-center g-3">
+                        <div class="datepicker-group col-12 col-md-6 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-calendar"></i>
+
+                                <label class="sr-only" for="cdate">Дата</label>
+                                <input type="text" id="cdate" class="form-control add-padding datepicker-inputs" placeholder="yyyy-mm-dd" name="date" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="timepicker-group col-12 col-md-6 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-clock"></i>
+                                <label class="sr-only" for="ctime">Година</label>
+                                <select class="form-control add-padding" id="ctime" name="time"   form="" required>
+                                    <option value="" selected>Оберіть час на котру Годину</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="name-group col-12 col-md-12 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-user"></i>
+                                <label class="sr-only" for="cname">Ім'я</label>
+                                <input type="text" class="form-control add-padding" id="cname" name="name" placeholder="Your name" minlength="2" required>
+                            </div>
+                        </div>
+                        <div class="guest-group col-12 col-md-6 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-users"></i>
+                                <label class="sr-only" for="cguests">Кількість місць</label>
+                                <select class="form-control add-padding" id="cguests" name="seats" required>
+                                    <option value="" selected>Оберіть сільки місць потрібно</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="timepicker-group col-12 col-md-6 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-clock"></i>
+                                <label class="sr-only" for="ctime">На скільки годин</label>
+                                <select class="form-control add-padding" id="cbook" name="booking"   form="" required>
+                                    <option value="" selected>Оберіть на скільки годин</option>
+                                    <option value="1 hours">1</option>
+                                    <option value="2 hours">2</option>
+                                    <option value="3 hours">3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="email-group col-12 col-md-6 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-envelope"></i>
+                                <label class="sr-only" for="cemail">Електронна Пошта</label>
+                                <input type="email" class="form-control add-padding" id="cemail" name="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="phone-group col-12 col-md-6 form-group">
+                            <div class="form-group-inner">
+                                <i class="fas fa-phone"></i>
+                                <label class="sr-only" for="cphone">Телефон</label>
+                                <input type="tel" class="form-control add-padding" id="cphone" name="phone" placeholder="Phone Number"  required>
+                            </div>
+                        </div>
+                         <div class="col-12 form-group">
+                            <button type="submit" class="btn btn-block btn-theme-primary">Замовити</button>
+                        </div>
+                    </div><!--//row-->
+                </form><!--//reserve-form-->
+            </div><!--//modal-body-->
+        </div><!--//modal-content-->
+    </div><!--//modal-dialog-->
+</div><!--//modal-->

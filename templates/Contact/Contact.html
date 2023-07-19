@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title text-center">
+            <span class="script">Зв'яжіться з нами</span>
+            <span class="title-text">для отримання додаткової інформації</span>
+            <span class="title-border"></span>
+        </h2>
+        <div class="contact-content">
+            <div class="row">
+                <div class="map-col col-12 col-md-6">
+                    <div id="map" class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16683.413604682824!2d34.80244539164617!3d50.90379540323618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412901f5bb565177%3A0x5a3c392e85c02d14!2z0LLRg9C70LjRhtGPINCl0LDRgNC60ZbQstGB0YzQutCwLCA1LCDQodGD0LzQuCwg0KHRg9C80YHRjNC60LAg0L7QsdC70LDRgdGC0YwsIDQwMDAw!5e0!3m2!1suk!2sua!4v1684408048982!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div><!--//map-->
+                </div><!--//map-col-->
+                <div class="info-col col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="general">
+                                <h4 class="title">Приходьте до нас</h4>
+                                <div class="adr-group">
+                                    <span class="street-address">Харківська 5</span><br>
+                                    <span class="city">Суми</span><br>
+                                    <span class="postal-code">40024</span><br>
+                                    <span class="country-name">Україна</span>
+                                </div>
+                                <div class="contact-methods">
+                                    <h5 class="subtitle">Загальні питання</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-envelope"></i> <a href="#">toha24112000gmail.com</a></li>
+                                        <li><i class="fas fa-phone"></i> <a href="tel:0800123456">095-41-09-017</a></li>
+                                    </ul>
+                                </div>
+                                <div class="contact-reserve">
+                                    <h5 class="subtitle" >Хочете замовити столик?</h5>
+                                    <button type="button" class="btn btn-theme-primary" id="reservation-table" data-bs-toggle="modal" data-bs-target="#reserve-modal">Замовити зараз</button>
+                                </div>
+                            </div><!--//general-->
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="press">
+                                <h4 class="title">Запитання Преси</h4>
+                                <p>Зверніться до нас щодо будь-яких питань, пов'язаних з пресою</p>
+                                <p><i class="fas fa-envelope"></i> <a href="#">toha20001124@gmail.com</a></p>
+                            </div><!--//press-->
+                        </div>
+                    </div><!--//row-->
+                </div><!--//info-col-->
+            </div><!--//row-->
+        </div><!--//contact-content-->
+    </div><!--//container-->
+</div><!--//contact-section-->
+{% endblock %}

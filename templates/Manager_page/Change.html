@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="menus" class="menus-section">
+    <div class="container text-center">
+        <div class="featured">
+            <div class="media-wrapper row">
+                <h2 class="section-title">
+                    <span class="script">Manage</span>
+                    <span class="title-text">Change</span>
+                    <span class="title-border"></span>
+                </h2>
+
+
+                <form method = "post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Додати до Меню</button>
+                </form>
+
+
+            </div><!--//media-wrapper-->
+        </div><!--//featured-->
+    </div><!--//container-->
+</div><!--//menus-section-->
+{% endblock %}

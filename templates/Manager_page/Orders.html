@@ -1,0 +1,36 @@
+{#<div class="col-left col-12">#}
+<table>
+    <thead>
+        <tr class="row100 head">
+            <th colspan="0.5" class="cell100 column1">Name</th>
+            <th colspan="1.5" class="cell100 column2">Email</th>
+            <th colspan="1" class="cell100 column3">Phone</th>
+            <th colspan="0.5" class="cell100 column4">Seats</th>
+            <th colspan="1.5" class="cell100 column5">Date</th>
+            <th colspan="1.5" class="cell100 column5">Time</th>
+            <th colspan="0.5" class="cell100 column7">Booking</th>
+            <th colspan="0.5" class="cell100 column6">Status</th>
+            <th colspan="0.5" class="cell100 column8">Confirm</th>
+            <th colspan="0.5" class="cell100 column9">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for items in orders%}
+            <tr class="row100 body">
+                <td class="cell100 column1">{{ items.name }} </td>
+                <td class="cell100 column2">{{ items.email }}</td>
+                <td class="cell100 column3">{{ items.phone }} </td>
+                <td class="cell100 column4">{{ items.seats }}</td>
+                <td class="cell100 column5">{{ items.date }}</td>
+                <td class="cell100 column5">{{ items.time }}</td>
+                <td class="cell100 column5">{{ items.booking }} h.</td>
+                <td class="cell100 column6">{{ items.status }}</td>
+                <td class="cell100 column7" ><a href="{% url 'confirm_orders' items.id %}">Підтвердити</a></td>
+                <td class="cell100 column8"><a href="{% url 'delete_orders' items.id %}">Видалити</a></td>
+            </tr>
+
+
+
+        {% endfor %}
+    </tbody>
+</table>

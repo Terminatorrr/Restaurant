@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script >
+
+function change_render(a){
+
+    if (a == 1){
+        document.getElementById('includ1').style.display='initial'
+        document.getElementById('includ2').style.display='none'
+        document.getElementById('includ3').style.display='none'
+    }
+    if (a == 2){
+        document.getElementById('includ1').style.display='none'
+        document.getElementById('includ2').style.display='initial'
+        document.getElementById('includ3').style.display='none'
+    }
+    if (a == 3){
+        document.getElementById('includ1').style.display='none'
+        document.getElementById('includ2').style.display='none'
+        document.getElementById('includ3').style.display='initial'
+    }
+}
+</script>
+<div id="menus" class="menus-section">
+    <div class="container text-center">
+        <div class="featured">
+            <div class="media-wrapper row">
+                <h2 class="section-title">
+                    <span class="script">Manage</span>
+                    <span class="title-text">Admin panel</span>
+                    <span class="title-border"></span>
+                </h2>
+                <div class="intro ms-auto me-auto">
+                    <p>Оберіть дію яку будете робити</p>
+                </div>
+                <br>
+                <div class="menu-links" id = "variants" >
+                    <ul class="list-inline me-auto ms-auto">
+                        <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(1) " >Додати</a></li>
+                        <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(2)" >Меню</a></li>
+                        <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(3)" >Замовлення</a></li>
+                    </ul>
+                </div><!--//menu-links-->
+                <div style="position: relative">
+                    <div id = "includ1" style="">
+                        {% include 'Manager_page/Add.html' %}
+                    </div>
+                    <div id = "includ2" style="display: none; ">
+                        {% include 'Manager_page/List_menu.html' %}
+                    </div>
+                    <div id = "includ3" style="display: none; ">
+                        {% include 'Manager_page/Orders.html' %}
+                    </div>
+                </div>
+
+
+
+
+
+            </div><!--//media-wrapper-->
+        </div><!--//featured-->
+    </div><!--//container-->
+</div><!--//menus-section-->
+{% endblock %}

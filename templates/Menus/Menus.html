@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- ******Menus section****** -->
+<script >
+
+function change_render(a){
+
+    if (a == 1){
+        document.getElementById('view1').style.display='initial'
+        document.getElementById('view2').style.display='none'
+        document.getElementById('view3').style.display='none'
+        document.getElementById('view4').style.display='none'
+        document.getElementById('view5').style.display='none'
+    }
+    if (a == 2){
+        document.getElementById('view1').style.display='none'
+        document.getElementById('view2').style.display='initial'
+        document.getElementById('view3').style.display='none'
+        document.getElementById('view4').style.display='none'
+        document.getElementById('view5').style.display='none'
+    }
+    if (a == 3){
+        document.getElementById('view1').style.display='none'
+        document.getElementById('view2').style.display='none'
+        document.getElementById('view3').style.display='initial'
+        document.getElementById('view4').style.display='none'
+        document.getElementById('view5').style.display='none'
+    }
+    if (a == 4){
+        document.getElementById('view1').style.display='none'
+        document.getElementById('view2').style.display='none'
+        document.getElementById('view3').style.display='none'
+        document.getElementById('view4').style.display='initial'
+        document.getElementById('view5').style.display='none'
+    }
+    if (a == 5){
+        document.getElementById('view1').style.display='none'
+        document.getElementById('view2').style.display='none'
+        document.getElementById('view3').style.display='none'
+        document.getElementById('view4').style.display='none'
+        document.getElementById('view5').style.display='initial'
+    }
+}
+</script>
+
+
+
+<div id="menus" class="menus-section">
+    <div class="container text-center">
+        <h2 class="section-title">
+            <span class="script">Відкрий для себе</span>
+            <span class="title-text">Наше Меню</span>
+            <span class="title-border"></span>
+        </h2>
+        <div class="intro ms-auto me-auto">
+            <p>Наше меню віддзеркалює нашу пристрасть до м'яса та найкращих кулінарних традицій. Кожна страва, приготована з використанням відбірних інгредієнтів, надзвичайно маринована, випічена або приготована на вогні, щоб забезпечити неперевершений смак та неповторний досвід. Розкрийте свій апетит і дозвольте нам подарувати вам незабутню подорож у світ м'ясних витонченостей.</p>
+        </div>
+        <div class="menu-links">
+            <ul class="list-inline me-auto ms-auto">
+                <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(1) "  target="_blank">Фастфуд</a></li>
+                <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(2) "  target="_blank">Салати</a></li>
+                <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(3) " target="_blank">М'ясо</a></li>
+                <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(4) " target="_blank">Гарнір</a></li>
+                <li class="list-inline-item"><a class="btn btn-theme-secondary" onclick=" change_render(5) " target="_blank">Напої</a></li>
+            </ul>
+        </div><!--//menu-links-->
+            <div class="featured">
+                <h3 class="title script">Dishes</h3>
+            </div><!--//featured-->
+
+
+                        <div id = "view1">
+                            <div class="section section1">
+                                <div class="container">
+                                    <div class="row">
+                                        {% for products in products_fast_food%}
+                                            {% include "Menus/Dish_Item.html" %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "view2">
+                            <div class="section section1">
+                                <div class="container">
+                                    <div class="row">
+                                        {% for products in products_salat%}
+                                            {% include "Menus/Dish_Item.html" %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "view3">
+                            <div class="section section1">
+                                <div class="container">
+                                    <div class="row">
+                                        {% for products in products_meet%}
+                                            {% include "Menus/Dish_Item.html" %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "view4">
+                            <div class="section section1">
+                                <div class="container">
+                                    <div class="row">
+                                        {% for products in products_side_dishes%}
+                                            {% include "Menus/Dish_Item.html" %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "view5" style="">
+                            <div class="section section1">
+                                <div class="container">
+                                    <div class="row">
+                                        {% for products in products_drinks%}
+                                            {% include "Menus/Dish_Item.html" %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+    </div><!--//container-->
+</div><!--//menus-section-->
+
+{% endblock %}

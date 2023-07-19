@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="hero" class="hero-section">
+
+
+    <div class="bg-slider-wrapper">
+
+        <div id="bg-carousel" class="bg-carousel carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner carousel-zoom">
+                <div class="carousel-item slide-1 active">
+                        <div class="d-flex align-items-center justify-content-center min-vh-100">
+
+                    </div>
+                </div>
+                <div class="carousel-item slide-2" data-bs-interval="6000">
+                        <div class="d-flex align-items-center justify-content-center min-vh-100">
+
+                    </div>
+                </div>
+                <div class="carousel-item slide-3" data-bs-interval="6000">
+                        <div class="d-flex align-items-center justify-content-center min-vh-100">
+
+                    </div>
+                </div>
+
+            </div>
+        </div><!--//bg-carousel-->
+    </div><!--//bg-slider-wrapper-->
+    <div class="content-wrapper">
+        <div class="container text-center">
+            <div class="branding">
+                <div class="script">Ласкаво просимо до</div>
+                <h1 class="logo text-center">
+                    <img class="img-fluid block-center" src="static/images/logo.png" alt="logo" />
+                </h1><!--//logo-->
+                <div class="tagline text-center">
+                    <ul class="list me-auto ms-auto">
+                        <li class="type">Кафе</li>
+                        <li role="presentation" class="dot"><i class="fas fa-circle"></i></li>
+                        <li class="type">Ресторан</li>
+                        <li role="presentation" class="dot"><i class="fas fa-circle"></i></li>
+                        <li class="type">Винний бар</li>
+                    </ul>
+                </div><!--//tagline-->
+            </div><!--//branding-->
+            <h2 class="promo-line">
+
+            </h2><!--//promo-->
+            <div class="cta-container">
+                <button type="button" class="btn btn-theme-primary" data-bs-toggle="modal" data-bs-target="#reserve-modal">Замовити столик</button>
+            </div><!--//cta-container-->
+        </div><!--//container-->
+    </div><!--//content-wrapper-->
+
+
+</section><!--//hero-section-->
+
+{% endblock %}

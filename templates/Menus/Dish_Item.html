@@ -1,0 +1,35 @@
+<div class="col-lg-3">
+    <div class="Dish-item">
+        <div class="img-container">
+            <a>
+                <img src="/static{{products.image.url}}" class="img-height">
+            </a>
+        </div>
+
+        {% if products_image.discount %}
+            <div class="discount-container">
+                <span>{{ products.discount }}%</span>
+            </div>
+        {% endif %}
+
+        <h4>{{ products.name}}</h4>
+
+        {% if products.alergic %}
+            <h4>Алерген: {{ products.alergic}}</h4>
+        {% endif %}
+
+        <p>
+            {{ products.description }}
+        </p>
+        {% if products.category.name == "drinks" %}
+            <h5>{{ products.weight}} л</h5>
+        {% else %}
+            <h5>{{ products.weight}} г</h5>
+        {% endif %}
+
+        <div>
+            <h4>{{ products.price}} UAH<h4>
+        </div>
+    </div>
+
+</div>
